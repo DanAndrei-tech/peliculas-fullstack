@@ -10,9 +10,8 @@ const vitestConfig: VitestUserConfigInterface = {
 };
 
 export default defineConfig({
+  root: "./src",
   plugins: [checker({ typescript: true })],
-  test: vitestConfig.test,
-  root: "./src", // tu código fuente
   build: {
     outDir: "../dist", // carpeta de salida en la raíz
     emptyOutDir: true,
