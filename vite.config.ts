@@ -1,17 +1,9 @@
 import { defineConfig } from "vite";
 import checker from "vite-plugin-checker";
-import type { UserConfig as VitestUserConfigInterface } from "vitest/config";
-
-const vitestConfig: VitestUserConfigInterface = {
-  test: {
-    globals: true,
-    restoreMocks: true,
-  },
-};
 
 export default defineConfig({
   build: {
-    outDir: "dist/client",
+    outDir: "dist", // generar directamente en dist
     emptyOutDir: true,
   },
 });
