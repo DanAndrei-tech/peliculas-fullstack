@@ -1,9 +1,10 @@
 import axios from "axios";
 import { Movie } from "./pelicula-listado.model";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const obtenerPeliculas = async (): Promise<Movie[]> => {
   try {
-    const { data } = await axios.get("http://localhost:3000/movies");
+    const { data } = await axios.get(`${API_URL}/movies`);
     return data;
   } catch (error) {
     throw new Error("Error al obtener las peliculas");
@@ -12,7 +13,7 @@ export const obtenerPeliculas = async (): Promise<Movie[]> => {
 
 export const borrarPelicula = async (id: string): Promise<void> => {
   try {
-    await axios.delete(`http://localhost:3000/movies/${id}`);
+    await axios.delete(`${API_URL}/movies/${id}`);
   } catch (error) {
     throw new Error("Error al borrar la pelicula");
   }
